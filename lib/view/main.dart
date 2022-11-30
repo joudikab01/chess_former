@@ -1,3 +1,4 @@
+import 'package:chess_former/smart_play/level_with_heuristic.dart';
 import 'package:chess_former/structure/level.dart';
 import 'package:chess_former/view/cell.dart';
 import 'package:flutter/material.dart';
@@ -78,9 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          state.State().dfs(Level(Position(x: 1, y: 1)));
-          state.State().bfs(Level(Position(x: 1, y: 1)));
-          state.State().ucs(LevelWithCost(Position(x: 1, y: 1),0));
+          // state.State().dfs(Level(Position(x: 1, y: 1)));
+          // state.State().bfs(Level(Position(x: 1, y: 1)));
+          // state.State().ucs(LevelWithCost(Position(x: 1, y: 1),0));
+          state.State().aStar(LevelWithHeuristic(Position(x: 1, y: 1), 1, 0));
         },
       ),
       body: Center(
